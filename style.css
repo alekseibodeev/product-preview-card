@@ -1,0 +1,191 @@
+@font-face {
+  font-family: Montserrat;
+  src:
+    url("./assets/fonts/Montserrat-VariableFont.woff2")
+      format("woff2 supports variations"),
+    url("./assets/fonts/Montserrat-VariableFont.woff2")
+      format("woff2-variations");
+  font-weight: 500 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Fraunces;
+  src:
+    url("./assets/fonts/Fraunces-VariableFont.woff2")
+      format("woff2 supports variations"),
+    url("./assets/fonts/Fraunces-VariableFont.woff2") format("woff2-variations");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: unset;
+  padding: unset;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.1;
+}
+
+p {
+  line-height: 1.6;
+}
+
+:root {
+  --clr-bg: hsl(26 40% 92%);
+  --clr-text: hsl(208 19% 14%);
+  --clr-subtle: hsl(240 5% 50%);
+  --clr-surface: hsl(0 0% 100%);
+  --clr-primary: hsl(158 36% 37%);
+  --clr-primary-text: hsl(0 0% 100%);
+  --clr-primary-hover: hsl(156 42% 18%);
+
+  --ff-sans: Montserrat, sans-serif;
+  --ff-display: Fraunces, serif;
+
+  --fw-regular: 500;
+  --fw-bold: 700;
+}
+
+.page {
+  color: var(--clr-text);
+  background-color: var(--clr-bg);
+  font-family: var(--ff-sans);
+  font-size: 1rem;
+  font-weight: var(--fw-regular);
+}
+
+.main {
+  min-height: 100vh;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  padding: 1.75rem 1rem;
+}
+
+.card {
+  background-color: var(--clr-surface);
+  font-size: 0.875rem;
+  border-radius: 0.5625rem;
+  width: min(100%, 37.5rem);
+  display: grid;
+}
+
+.card__cover {
+  aspect-ratio: 1.4;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0.5625rem 0.5625rem 0 0;
+}
+
+.card__body {
+  display: grid;
+  gap: 1rem;
+  padding: clamp(1.5rem, 1.3239rem + 0.7512vw, 2rem);
+}
+
+.card__category {
+  color: var(--clr-subtle);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+}
+
+.card__title {
+  font-family: var(--ff-display);
+  font-weight: var(--fw-bold);
+  font-size: 1.875rem;
+}
+
+.card__description {
+  color: var(--clr-subtle);
+}
+
+.card__prices {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card__current-price {
+  color: var(--clr-primary);
+  font-family: var(--ff-display);
+  font-weight: var(--fw-bold);
+  font-size: 1.875rem;
+}
+
+.card__old-price {
+  color: var(--clr-subtle);
+  font-size: 0.75rem;
+  text-decoration: line-through;
+}
+
+.button {
+  color: var(--clr-primary-text);
+  background-color: var(--clr-primary);
+  font-weight: var(--fw-bold);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1cap;
+  padding: 1rem;
+  border-radius: 0.4375rem;
+  border: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--clr-primary-hover);
+    outline: none;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media screen and (min-width: 39.5rem) {
+  .card {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card__cover {
+    aspect-ratio: unset;
+    border-radius: 0.5625rem 0 0 0.5625rem;
+  }
+}
