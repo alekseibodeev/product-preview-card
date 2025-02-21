@@ -24,11 +24,11 @@ Users should be able to:
 
 #### Desktop
 
-![](./screenshots/desktop.png)
+<img src="./screenshots/desktop.png" width="1024" >
 
 #### Mobile
 
-![](./screenshots/mobile.png)
+<img src="./screenshots/mobile.png" width="375" >
 
 ### Links
 
